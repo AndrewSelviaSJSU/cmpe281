@@ -1,6 +1,9 @@
-# How To Fail
+# AWS Reference Guide
 
-1. NAT Gateway allows instances in a private subnet to reach out to the internet. An internet gateway (igw) controls which external IPs are able to reach instances in a public subnet. I had put the NAT Gateway on my Public Subnet. This prevented me from being able to ssh into my jumpbox. The solution was to return the public subnet to use the igw so that external hosts could reach it. The NAT gateway was really only needed to allow the mysqldb instance to download mysql onto itself since it lives in the private subnet.
+## [VPC and Subnets](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html)
+* If a subnet's traffic is routed to an internet gateway, the subnet is known as a **public subnet**. In this diagram, subnet 1 is a public subnet.
+* If a subnet doesn't have a route to the internet gateway, the subnet is known as a **private subnet**. In this diagram, subnet 2 is a private subnet.
+![](/images/subnets-diagram.png)
 
 2. default VPC
 
