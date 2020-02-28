@@ -3,6 +3,7 @@
 ## [VPC and Subnets](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html)
 * If a subnet's traffic is routed to an internet gateway, the subnet is known as a **public subnet**. In this diagram, subnet 1 is a public subnet.
 * If a subnet doesn't have a route to the internet gateway, the subnet is known as a **private subnet**. In this diagram, subnet 2 is a private subnet.
+
 ![](/images/subnets-diagram.png)
 
 2. default VPC
