@@ -8,7 +8,7 @@
 ![](/images/subnets-diagram.png)
 
 ## [Internet Gateways](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Internet_Gateway.html), [NAT Gateways](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html), and [Gateway Route Tables](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html)
-* Internet Gateways allow connections to be established from both **within** the VPC and the internet.
+* Internet Gateways allow connections to be established **both** from within the VPC **and** the internet.
 * NAT Gateways allow connections to be established **only** from within the VPC.
 * **NOTE:** Traffic from already established connections can still be forwarded in either direction. See _Inbound vs Outbound Rules_ for more details.
 
@@ -16,6 +16,15 @@
 * _Inbound_ Security Group rules refer to the address space, ports, and protocols that **connections** can be established from.
 * _Outbound_ Security Group rules refer to the address space, ports, and protocols that **traffic** can flow from.
 
+## Tips and Tricks
+* Convert .jpg to .pdf
+   * Print to PDF for Windows & Mac
+   * ImageMagick convert for Mac & Ubuntu
+```
+convert *.png ScreenShots.pdf
+```
+
+## ---
 2. default VPC
 
     Resolution:
@@ -37,8 +46,3 @@
     4. Select *Target Groups*
     5. Select the desired target group (*php-target-1* and *php-target-2*, respectively, for Lab Quiz 1)
     6. Select *Save*
-    
-6. How to convert a bunch of PDF Screen Shots into a single PDF for upload to Canvas?
-```
-convert *.png ScreenShots.pdf
-```
