@@ -1,30 +1,7 @@
-# How to Fail
+# How To Fail
 
-## [VPC and Subnets](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html)
-* If a subnet's traffic is routed to an internet gateway, the subnet is known as a **public subnet**. In this diagram, subnet 1 is a public subnet.
-* If a subnet doesn't have a route to the internet gateway, the subnet is known as a **private subnet**. In this diagram, subnet 2 is a private subnet.
-* There is no option for a subnet to be inherently private or public; this characteristic is determined by the **routing table** the subnet is attached to.
+1. NAT Gateway allows instances in a private subnet to reach out to the internet. An internet gateway (igw) controls which external IPs are able to reach instances in a public subnet. I had put the NAT Gateway on my Public Subnet. This prevented me from being able to ssh into my jumpbox. The solution was to return the public subnet to use the igw so that external hosts could reach it. The NAT gateway was really only needed to allow the mysqldb instance to download mysql onto itself since it lives in the private subnet.
 
-![](/images/subnets-diagram.png)
-
-## [Internet Gateways](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Internet_Gateway.html), [NAT Gateways](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html), and [Gateway Route Tables](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html)
-* Internet Gateways allow connections to be established **both** from within the VPC **and** the internet.
-* NAT Gateways allow connections to be established **only** from within the VPC.
-* **NOTE:** Traffic from already established connections can still be forwarded in either direction. See _Inbound vs Outbound Rules_ for more details.
-
-## [Inbound vs Outbound Rules](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html)
-* _Inbound_ Security Group rules refer to the address space, ports, and protocols that **connections** can be established from.
-* _Outbound_ Security Group rules refer to the address space, ports, and protocols that **traffic** can flow from.
-
-## Tips and Tricks
-* Convert .jpg to .pdf
-   * Print to PDF for Windows & Mac
-   * ImageMagick convert for Mac & Ubuntu
-```
-convert *.png ScreenShots.pdf
-```
-
-## ---
 2. default VPC
 
     Resolution:
@@ -46,3 +23,8 @@ convert *.png ScreenShots.pdf
     4. Select *Target Groups*
     5. Select the desired target group (*php-target-1* and *php-target-2*, respectively, for Lab Quiz 1)
     6. Select *Save*
+    
+6. How to convert a bunch of PDF Screen Shots into a single PDF for upload to Canvas?
+```
+convert *.png ScreenShots.pdf
+```
