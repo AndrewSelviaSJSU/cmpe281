@@ -7,9 +7,9 @@
 * [Link to subnets diagram](https://docs.aws.amazon.com/vpc/latest/userguide/images/subnets-diagram.png)
 
 ## [Internet Gateways](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Internet_Gateway.html), [NAT Gateways](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html), and [Gateway Route Tables](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html)
-* Internet Gateways allow connections to be established **both** from within the VPC **and** the internet.
-* NAT Gateways allow connections to be established **only** from within the VPC.
-* **NOTE:** Traffic from already established connections can still be forwarded in either direction. See _Inbound vs Outbound Rules_ for more details.
+* Internet Gateways allow connections to be established **both** from within the associated subnet(s) **and** outside from the internet.
+* NAT Gateways allow connections to be established **only** from within the associated subnet(s).
+* **NOTE:** Traffic from already established connections can still flow in either direction. See below.
 
 ## [Inbound and Outbound Rules](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html)
 * _Inbound_ Security Group rules refer to the address space, ports, and protocols that **connections** can be established from.
@@ -21,7 +21,7 @@
 * Convert .jpg to .pdf
    * _Print to PDF_ --- Windows & Mac
    * ImageMagick convert --- Mac & Ubuntu
+   * Ampare PDF ---- img to pdf w/ gui --- Ubuntu
 ```
 convert *.png ScreenShots.pdf
 ```
-   * Ampare PDF ---- img to pdf w/ gui --- Ubuntu
