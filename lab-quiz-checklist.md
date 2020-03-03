@@ -2,23 +2,23 @@
 
 ## Basic Prep
 * Setup
-    * Spin up jumpbox, php-instance, docker-container, etc...
+    * Spin up your jumpbox, php-instance, docker-container (EC2-Instances)
     * Check that the routing table for your **private subnets** have a NAT gateway
-    * Check that the routing table for your **public subnets**  have a Internet gateway
-    * Start up NAT Gateway and associate with the routing table (for your private subnets)
+    * Check that the routing table for your **public subnets**  have an Internet gateway
+    * Start up NAT gateway and associate it with the routing table (for your private subnets)
     * Make separate folders for your screenshots/generated pdfs
     * Double check .png to .pdf is working
 
 * Sanity Check
-    * SSH
+    * SSH/SCP
         * SSH into jumpbox
         * SSH into public instances
         * SSH from jumpbox to private instances
     * Routing
         * Check NAT gateway is working in private instances (sudo yum update while inside private instance)
-        * Check Internet gateway is working in public stances (curl <public ip>:<port>/<path>)
+        * Check Internet gateway is working in public stances (ping the instance)
     * Scripting
-        * Make sure your local machine, jumpbox, and instances all have scripts (sample below)
+        * Make scripts to access resources quickly (sample below)
 
 ## Scripting
 ```
